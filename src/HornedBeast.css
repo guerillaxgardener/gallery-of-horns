@@ -1,0 +1,40 @@
+article{
+  border: 1px solid gray;
+  border-radius: 3%;
+  padding: 1vw;
+  margin-bottom: 1vw;
+  width: 16%;
+  color: aliceblue;
+  background-color: rgb(14, 82, 25);
+}
+
+article img{
+  width: 100%;
+  margin-bottom: 1vw;
+  border-radius: 2vw;
+  cursor: pointer;
+}
+
+article p{
+  font-size: 13px;
+  margin: auto;
+  display: inline-block;
+  margin-bottom: .8rem;
+  padding-top: 1vw;
+}
+
+/* article p:last-of-type{
+}
+
+.article-button{
+} */
+
+.article-button:hover{
+  color:purple;
+}
+
+
+
+
+
+
