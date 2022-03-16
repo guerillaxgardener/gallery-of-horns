@@ -16,10 +16,6 @@ class HornedBeast extends React.Component {
     });
   };
 
-
-
-
-
   render() {
     // console.log(this.props)
     // console.log(this.state);
@@ -27,15 +23,14 @@ class HornedBeast extends React.Component {
       <article>
         <h3>{this.props.title}</h3>
 
-
         <img
           src={this.props.image_url}
           alt={this.props.description}
           title={this.props.title}
           onClick={this.handlehearts}
         />
-        <p>{this.props.description}</p>
 
+        <p>{this.props.description}</p>
 
         <Button
           className="article-button"
