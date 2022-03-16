@@ -1,0 +1,14 @@
+main{
+  /* display:flex;
+  flex-wrap: wrap;
+  justify-content: space-around; */
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: center;
+  /* width: 100%; */
+  /* align-items: center; */
+  /* flex-basis: auto; */
+}
