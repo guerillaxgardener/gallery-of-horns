@@ -1,6 +1,6 @@
 import React from "react";
+import { Col, Card, Button } from 'react-bootstrap';
 import './HornedBeast.css';
-import Button from 'react-bootstrap/Button';
 
 class HornedBeast extends React.Component {
   constructor(props) {
@@ -10,37 +10,35 @@ class HornedBeast extends React.Component {
     }
   }
 
-  handlehearts = () => {
-    this.setState({
-      hearts: this.state.hearts + 1
-    });
+  handleHearts = () => this.setState({ hearts: this.state.hearts + 1 });
+
+  handleBeastClick = () => {
+    this.handleHearts();
+    this.props.handleSelectedBeast(this.props.beast);
   };
+
 
   render() {
     // console.log(this.props)
     // console.log(this.state);
     return (
-      <article>
-        <h3>{this.props.title}</h3>
-
-        <img
-          src={this.props.image_url}
-          alt={this.props.description}
-          title={this.props.title}
-          onClick={this.handlehearts}
-        />
-
-        <p>{this.props.description}</p>
-
-        <Button
-          className="article-button"
-          onClick={this.handlehearts}
-        >
-          Give 💓💓💓's
-        </Button>
-
-        <p>You've given {this.state.hearts} 💓💓💓's</p>
-      </article>
+      <Col>
+        <Card className="beastCards h-100" style={{ width: '18rem' }}>
+          <Card.Title>{this.props.beast.title}</Card.Title>
+          <Card.Img
+            src={this.props.beast.image_url}
+            onClick={this.handleBeastClick}
+            alt={this.props.beast.description}
+          />
+          <Card.Body>
+            <Card.Subtitle> You've given {this.state.hearts} 💓💓💓's </Card.Subtitle>
+            <Button className="article-button" onClick={this.handleBeastClick}>
+              Give 💓💓💓's
+            </Button>
+            <Card.Text> {this.props.beast.description} </Card.Text>
+          </Card.Body>
+        </Card>
+      </Col >
     );
   }
 }
