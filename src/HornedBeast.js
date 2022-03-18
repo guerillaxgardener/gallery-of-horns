@@ -17,9 +17,8 @@ class HornedBeast extends React.Component {
     this.props.handleSelectedBeast(this.props.beast);
   };
 
-
   render() {
-    // console.log(this.props)
+    // console.log('HornedBeast.js props:',this.props);
     // console.log(this.state);
     return (
       <Col>
@@ -44,3 +43,7 @@ class HornedBeast extends React.Component {
 }
 
 export default HornedBeast;
+
+
+//handleSelectedBeast={this.props.handleSelectedBeast}
+//hornsShown={this.props.hornsShown}
