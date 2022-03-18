@@ -11,9 +11,19 @@ class Main extends React.Component {
         <HornedBeast
           beast={beast}
           handleSelectedBeast={this.props.handleSelectedBeast}
+          hornsShown={this.props.hornsShown}
         />
       </Col>
     ));
+
+    let hornFiltrationArray = hornedBeastArray.filter(beast => (beast.horn === this.props.hornsShown));
+
+    console.log("horn",hornFiltrationArray);
+    // handleBeastClick = () => {
+    //   this.handleHearts();
+    //   this.props.handleSelectedBeast(this.props.beast);
+    // };
+
 
     // console.log(hornedBeastArray);
     return (
