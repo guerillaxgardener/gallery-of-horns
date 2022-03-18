@@ -13,7 +13,9 @@ class App extends React.Component {
     super(props)
     this.state = {
       beast: {},
-      showModal: false
+      showModal: false,
+      hornsShown: 0,
+      allBeasts: data
     }
   }
 
@@ -25,10 +27,25 @@ class App extends React.Component {
     })
   }
 
+  handleHornFilter = (hornsShown) => {
+    console.log(typeof hornsShown);
+    let hornFiltrationArray = data.filter(beast => (beast.horns === hornsShown));
+    console.log(hornFiltrationArray);
+
+    this.setState({
+      allBeasts: hornFiltrationArray
+    })
+    if (hornsShown === 0){
+      this.setState({
+        allBeasts: data
+      })
+    }
+  }
+
   closeModal = () => this.setState({ showModal: false });
 
   render() {
-    console.log('app state', this.state);
+    // console.log('app state', this.state);
     return (
       <>
         <SelectedBeast
@@ -36,10 +53,13 @@ class App extends React.Component {
           closeModal={this.closeModal}
           beast={this.state.beast}
         />
-        <Header />
+        <Header
+          handleHornFilter={this.handleHornFilter}
+        />
         <Main
-          data={data}
+          data={this.state.allBeasts}
           handleSelectedBeast={this.handleSelectedBeast}
+          hornsShown={this.state.hornsShown}
         />
         <Footer />
       </>
