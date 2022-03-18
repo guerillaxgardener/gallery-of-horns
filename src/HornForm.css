@@ -6,6 +6,8 @@ width: fit-content;
 
 Form{
   color: lightgray;
-  border: red 3px dashed;
+  /* border: red 3px dashed; */
+  width: fit-content;
+  margin-left: 40%;
   
 }
